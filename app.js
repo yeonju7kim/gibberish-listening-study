@@ -236,8 +236,26 @@ async function init() {
     showItem();
   });
 
+  // Audio error handling
+  function showAudioError() {
+    const existing = document.getElementById("audio-error");
+    if (existing) return;
+    const msg = document.createElement("p");
+    msg.id = "audio-error";
+    msg.className = "audio-error";
+    msg.innerHTML = 'Audio failed to load. <button type="button" id="retry-btn">Retry</button>';
+    $("player").after(msg);
+    document.getElementById("retry-btn").addEventListener("click", () => {
+      msg.remove();
+      const a = audio();
+      a.load();
+      a.play().catch(() => showAudioError());
+    });
+  }
+
   // Audio player events
   const a = audio();
+  a.addEventListener("error", () => showAudioError());
   a.addEventListener("timeupdate", updatePlayerUI);
   a.addEventListener("loadedmetadata", updatePlayerUI);
   a.addEventListener("play", () => {
@@ -250,7 +268,7 @@ async function init() {
   a.addEventListener("ended", () => { closePlayInterval(); updatePlayerUI(); });
 
   $("play-btn").addEventListener("click", () => {
-    if (a.paused) a.play(); else a.pause();
+    if (a.paused) a.play().catch(() => showAudioError()); else a.pause();
   });
   $("seek-back").addEventListener("click", () => seekBy(-5));
   $("seek-fwd").addEventListener("click", () => seekBy(5));
@@ -271,7 +289,7 @@ async function init() {
     if ($("study").classList.contains("hidden")) return;
     if (event.code === "Space") {
       event.preventDefault();
-      if (a.paused) a.play(); else a.pause();
+      if (a.paused) a.play().catch(() => showAudioError()); else a.pause();
       return;
     }
     if (event.code === "ArrowLeft") { event.preventDefault(); seekBy(-5); return; }
