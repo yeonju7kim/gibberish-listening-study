@@ -151,6 +151,9 @@ function showItem() {
 
   $("progress").textContent = `Sample ${state.index + 1} of ${state.items.length}`;
   $("item-title").textContent = `Audio sample ${state.index + 1}`;
+  audio().playbackRate = 1;
+  $("speed-btn").textContent = "1×";
+  $("speed-btn").classList.remove("speed-active");
 
   const a = audio();
   a.src = item.audio;
@@ -262,6 +265,13 @@ async function init() {
   $("play-btn").addEventListener("click", () => {
     if (a.paused) a.play().catch(() => showAudioError()); else a.pause();
   });
+  $("speed-btn").addEventListener("click", () => {
+    const a = audio();
+    a.playbackRate = a.playbackRate === 1 ? 2 : 1;
+    $("speed-btn").textContent = a.playbackRate === 1 ? "1×" : "2×";
+    $("speed-btn").classList.toggle("speed-active", a.playbackRate === 2);
+  });
+
   $("seek-back").addEventListener("click", () => seekBy(-5));
   $("seek-fwd").addEventListener("click", () => seekBy(5));
   $("reload-btn").addEventListener("click", () => {

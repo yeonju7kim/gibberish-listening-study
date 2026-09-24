@@ -170,6 +170,8 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
 }
 .seek-btn:hover:not(:disabled) { background: #dde5f5; filter: none; }
 .reload-btn { color: #657084; border-color: #bac4d3; font-size: 1.1rem; padding: 8px 12px; }
+.speed-btn { color: #657084; border-color: #bac4d3; }
+.speed-active { background: #315fcb; color: white; border-color: #315fcb; }
 
 /* Rating choices */
 .prompt { font-size: 1.12rem; font-weight: 700; margin-top: 24px; }
