@@ -1,6 +1,6 @@
 {
-  "study_id": "gibberish_audio_validation_v2_372de56ef0da",
-  "item_count": 42,
+  "study_id": "gibberish_audio_validation_v2_753cad0e4d3a",
+  "item_count": 40,
   "estimated_minutes": 45,
   "items": [
     {
@@ -162,14 +162,6 @@
     {
       "item_id": "H040",
       "audio": "clips/H040.mp3"
-    },
-    {
-      "item_id": "H041",
-      "audio": "clips/H041.mp3"
-    },
-    {
-      "item_id": "H042",
-      "audio": "clips/H042.mp3"
     }
   ]
 }
