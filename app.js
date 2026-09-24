@@ -1,17 +1,14 @@
-const WEB3FORMS_KEY = "21ee32f6-3bd9-47da-9578-cf127ed8c956";
-
 async function autoSubmit(csv, raterId) {
   try {
-    await fetch("https://api.web3forms.com/submit", {
+    const form = new FormData();
+    form.append("_subject", `Gibberish study — ${raterId}`);
+    form.append("_template", "table");
+    form.append("rater_id", raterId);
+    form.append("csv", csv);
+    await fetch("https://formsubmit.co/yeonju7.kim@gmail.com", {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: `Gibberish study — ${raterId}`,
-        from_name: raterId,
-        email: "anonymous@example.com",
-        message: csv,
-      }),
+      headers: { "Accept": "application/json" },
+      body: form,
     });
   } catch (_) {}
 }
