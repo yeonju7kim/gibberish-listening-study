@@ -1,0 +1,214 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: #f4f6f9;
+  color: #172033;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 700px; margin: 5vh auto; padding: 20px; }
+
+.card {
+  background: white;
+  border: 1px solid #dbe1ea;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(20, 33, 55, 0.08);
+  padding: 36px;
+}
+.hidden { display: none; }
+
+h1 { margin-top: 0; font-size: 1.6rem; }
+h2 { font-size: 1.15rem; margin-top: 1.4em; }
+p, li { line-height: 1.6; }
+ul { padding-left: 1.4em; }
+code { font-family: ui-monospace, monospace; font-size: 0.9em; background: #f1f5ff; padding: 1px 5px; border-radius: 4px; }
+
+/* Info / definition boxes */
+.info-box {
+  background: #f0f7ff;
+  border-left: 4px solid #3b82f6;
+  padding: 14px 16px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.5;
+}
+.definition {
+  background: #f1f5ff;
+  border-left: 4px solid #466fd8;
+  padding: 14px 16px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.5;
+}
+
+/* Consent checkbox */
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 24px 0 20px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.consent-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #315fcb;
+  cursor: pointer;
+}
+
+/* Rater ID input */
+label:not(.consent-check) { display: grid; gap: 7px; font-weight: 650; margin: 22px 0; }
+input[type="text"] {
+  font: inherit;
+  padding: 11px 12px;
+  border: 1px solid #bac4d3;
+  border-radius: 8px;
+}
+
+/* Buttons */
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 22px;
+  font: inherit;
+  font-weight: 700;
+  color: white;
+  background: #315fcb;
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+button:hover:not(:disabled) { filter: brightness(0.93); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Study topline */
+.topline { display: flex; justify-content: space-between; color: #657084; margin-bottom: 4px; font-size: 0.9rem; }
+
+.context-note { color: #657084; font-size: 0.9rem; margin: 4px 0 0; }
+
+/* --- Custom audio player --- */
+#player {
+  margin: 20px 0 18px;
+  user-select: none;
+}
+
+#player-bar-wrap {
+  cursor: pointer;
+  padding: 10px 0;
+  outline: none;
+}
+#player-bar-wrap:focus #player-bar { box-shadow: 0 0 0 3px rgba(49, 95, 203, 0.3); }
+
+#player-bar {
+  position: relative;
+  height: 6px;
+  background: #dbe1ea;
+  border-radius: 4px;
+}
+#player-fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: #315fcb;
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+#player-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: #315fcb;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  pointer-events: none;
+}
+
+#player-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #657084;
+  margin-top: 4px;
+}
+
+#player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.play-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  font-size: 1.3rem;
+  display: grid;
+  place-items: center;
+  background: #315fcb;
+  color: white;
+}
+
+.seek-btn {
+  background: #eef2f8;
+  color: #315fcb;
+  border: 1px solid #cbd4e1;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 8px !important;
+}
+.seek-btn:hover:not(:disabled) { background: #dde5f5; filter: none; }
+
+/* Rating choices */
+.prompt { font-size: 1.12rem; font-weight: 700; margin-top: 24px; }
+.choices { display: grid; gap: 10px; }
+.choices button {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: center;
+  text-align: left;
+  background: #eef2f8;
+  color: #172033;
+  border: 1px solid #cbd4e1;
+  padding: 12px 16px;
+}
+.choices button:nth-child(3),
+.choices button:nth-child(4) {
+  background: #fff0f0;
+  border-color: #e9baba;
+}
+
+kbd {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #aeb8c7;
+  border-radius: 5px;
+  background: white;
+  font: inherit;
+  font-size: 0.85rem;
+  box-shadow: 0 1px 1px rgba(0,0,0,.08);
+}
+
+.hint { color: #657084; font-size: 0.88rem; margin-top: 14px; margin-bottom: 0; }
+
+/* Done page */
+.done-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+
+@media (max-width: 600px) {
+  main { margin: 0; padding: 10px; }
+  .card { padding: 22px 18px; border-radius: 10px; }
+  .play-btn { width: 48px; height: 48px; }
+}

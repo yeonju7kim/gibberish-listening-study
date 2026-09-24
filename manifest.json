@@ -1,0 +1,103 @@
+{
+  "study_id": "gibberish_audio_validation_v1_4b2291fdde02",
+  "item_count": 24,
+  "estimated_minutes": 30,
+  "items": [
+    {
+      "item_id": "H001",
+      "audio": "clips/H001.wav"
+    },
+    {
+      "item_id": "H002",
+      "audio": "clips/H002.wav"
+    },
+    {
+      "item_id": "H003",
+      "audio": "clips/H003.wav"
+    },
+    {
+      "item_id": "H004",
+      "audio": "clips/H004.wav"
+    },
+    {
+      "item_id": "H005",
+      "audio": "clips/H005.wav"
+    },
+    {
+      "item_id": "H006",
+      "audio": "clips/H006.wav"
+    },
+    {
+      "item_id": "H007",
+      "audio": "clips/H007.wav"
+    },
+    {
+      "item_id": "H008",
+      "audio": "clips/H008.wav"
+    },
+    {
+      "item_id": "H009",
+      "audio": "clips/H009.wav"
+    },
+    {
+      "item_id": "H010",
+      "audio": "clips/H010.wav"
+    },
+    {
+      "item_id": "H011",
+      "audio": "clips/H011.wav"
+    },
+    {
+      "item_id": "H012",
+      "audio": "clips/H012.wav"
+    },
+    {
+      "item_id": "H013",
+      "audio": "clips/H013.wav"
+    },
+    {
+      "item_id": "H014",
+      "audio": "clips/H014.wav"
+    },
+    {
+      "item_id": "H015",
+      "audio": "clips/H015.wav"
+    },
+    {
+      "item_id": "H016",
+      "audio": "clips/H016.wav"
+    },
+    {
+      "item_id": "H017",
+      "audio": "clips/H017.wav"
+    },
+    {
+      "item_id": "H018",
+      "audio": "clips/H018.wav"
+    },
+    {
+      "item_id": "H019",
+      "audio": "clips/H019.wav"
+    },
+    {
+      "item_id": "H020",
+      "audio": "clips/H020.wav"
+    },
+    {
+      "item_id": "H021",
+      "audio": "clips/H021.wav"
+    },
+    {
+      "item_id": "H022",
+      "audio": "clips/H022.wav"
+    },
+    {
+      "item_id": "H023",
+      "audio": "clips/H023.wav"
+    },
+    {
+      "item_id": "H024",
+      "audio": "clips/H024.wav"
+    }
+  ]
+}

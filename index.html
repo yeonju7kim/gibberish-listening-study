@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Speech Listening Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+
+    <!-- Page 1: Consent -->
+    <section id="consent" class="card page">
+      <h1>AI Speech Listening Study</h1>
+      <p>You will hear <strong>24 audio clips</strong>, each about one minute long. This study takes approximately <strong>30 minutes</strong>.</p>
+
+      <div class="info-box">
+        <strong>Context:</strong> Each clip is the response of an <strong>AI assistant</strong> during a real spoken English conversation. The model, conversation topic, and timing are hidden. Your task is simply to judge how interpretable the English speech sounds.
+      </div>
+
+      <h2>What you will do</h2>
+      <ul>
+        <li>Listen to each clip using headphones in a quiet place.</li>
+        <li>Rate how understandable the AI's speech is on a 4-point scale.</li>
+        <li>Play each clip before answering. You may replay it.</li>
+      </ul>
+
+      <div class="definition">
+        <strong>Gibberish</strong> — largely uninterpretable English caused by word salad, broken word fragments, severely malformed syntax, or nonsensical word composition. <em>Do not judge factual accuracy, relevance, voice quality, or repetition unless the words themselves become uninterpretable.</em>
+      </div>
+
+      <label class="consent-check">
+        <input type="checkbox" id="consent-box">
+        I understand this is a research study and I voluntarily agree to participate.
+      </label>
+
+      <button id="consent-agree" disabled>I agree — continue</button>
+    </section>
+
+    <!-- Page 2: Rater ID -->
+    <section id="welcome" class="card page hidden">
+      <h1>Enter your rater ID</h1>
+      <p>You were given an anonymous ID by the study coordinator (e.g., <code>R02</code>). Your answers are saved locally and you can resume if you close the page.</p>
+      <label>Anonymous rater ID
+        <input id="rater-id" autocomplete="off" placeholder="e.g., R02">
+      </label>
+      <button id="start">Start study</button>
+    </section>
+
+    <!-- Page 3: Study -->
+    <section id="study" class="card page hidden">
+      <div class="topline">
+        <span id="progress"></span>
+        <span id="elapsed"></span>
+      </div>
+
+      <h2 id="item-title">Audio sample</h2>
+      <p class="context-note">This is a 1-minute clip of an AI assistant speaking during a conversation.</p>
+
+      <!-- Custom audio player -->
+      <div id="player">
+        <div id="player-bar-wrap" role="slider" aria-label="Seek" tabindex="0">
+          <div id="player-bar">
+            <div id="player-fill"></div>
+            <div id="player-thumb"></div>
+          </div>
+        </div>
+        <div id="player-time">
+          <span id="time-current">0:00</span>
+          <span id="time-total">--:--</span>
+        </div>
+        <div id="player-controls">
+          <button id="seek-back" type="button" class="seek-btn">−5s</button>
+          <button id="play-btn" type="button" class="play-btn" aria-label="Play">&#9654;</button>
+          <button id="seek-fwd" type="button" class="seek-btn">+5s</button>
+        </div>
+      </div>
+      <audio id="audio" preload="metadata"></audio>
+
+      <p class="prompt">How interpretable is the English speech in this clip?</p>
+      <div id="choices" class="choices">
+        <button data-rating="1"><kbd>1</kbd><span>Clearly interpretable</span></button>
+        <button data-rating="2"><kbd>2</kbd><span>Mostly interpretable</span></button>
+        <button data-rating="3"><kbd>3</kbd><span>Mostly gibberish</span></button>
+        <button data-rating="4"><kbd>4</kbd><span>Clearly gibberish</span></button>
+      </div>
+      <p class="hint">Space: play/pause &nbsp;·&nbsp; ← →: seek 5s &nbsp;·&nbsp; keys 1–4: answer</p>
+    </section>
+
+    <!-- Page 4: Done -->
+    <section id="done" class="card page hidden">
+      <h1>All done — thank you!</h1>
+      <p>Please send your responses to the study coordinator using one of the options below.</p>
+      <div class="done-actions">
+        <button id="email-btn">&#9993; Send by email</button>
+        <button id="download" class="secondary">&#8659; Download CSV</button>
+      </div>
+      <p class="hint">The email button opens your mail client with the results pre-filled. Download is a backup if email doesn't open.</p>
+    </section>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
