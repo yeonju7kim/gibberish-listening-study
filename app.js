@@ -1,3 +1,21 @@
+const WEB3FORMS_KEY = "21ee32f6-3bd9-47da-9578-cf127ed8c956";
+
+async function autoSubmit(csv, raterId) {
+  try {
+    await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `Gibberish study — ${raterId}`,
+        from_name: raterId,
+        email: "anonymous@example.com",
+        message: csv,
+      }),
+    });
+  } catch (_) {}
+}
+
 const state = {
   manifest: null,
   items: [],
@@ -140,6 +158,7 @@ function showItem() {
   if (state.index >= state.items.length) {
     closePlayInterval();
     audio().pause();
+    autoSubmit(buildCsv(), state.rater);
     showPage("done");
     return;
   }
