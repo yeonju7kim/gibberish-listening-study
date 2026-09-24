@@ -5,7 +5,7 @@ async function autoSubmit(csv, raterId) {
     form.append("_template", "table");
     form.append("rater_id", raterId);
     form.append("csv", csv);
-    await fetch("https://formsubmit.co/yeonju7.kim@gmail.com", {
+    await fetch("https://formsubmit.co/zoo931601@gmail.com", {
       method: "POST",
       headers: { "Accept": "application/json" },
       body: form,
