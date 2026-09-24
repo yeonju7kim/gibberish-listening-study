@@ -272,6 +272,12 @@ async function init() {
   });
   $("seek-back").addEventListener("click", () => seekBy(-5));
   $("seek-fwd").addEventListener("click", () => seekBy(5));
+  $("reload-btn").addEventListener("click", () => {
+    document.getElementById("audio-error")?.remove();
+    const a = audio();
+    a.load();
+    a.play().catch(() => showAudioError());
+  });
 
   setupPlayerBar();
 

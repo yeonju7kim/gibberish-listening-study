@@ -169,6 +169,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
   border-radius: 8px !important;
 }
 .seek-btn:hover:not(:disabled) { background: #dde5f5; filter: none; }
+.reload-btn { color: #657084; border-color: #bac4d3; font-size: 1.1rem; padding: 8px 12px; }
 
 /* Rating choices */
 .prompt { font-size: 1.12rem; font-weight: 700; margin-top: 24px; }
