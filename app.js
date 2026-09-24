@@ -203,14 +203,6 @@ function downloadCsv() {
   URL.revokeObjectURL(link.href);
 }
 
-function emailCsv() {
-  const csv = buildCsv();
-  const subject = encodeURIComponent(`Gibberish study response — ${state.rater}`);
-  const body = encodeURIComponent(
-    `Rater ID: ${state.rater}\nSubmitted: ${new Date().toISOString()}\n\n${csv}`
-  );
-  window.location.href = `mailto:yeonju7.kim@gmail.com?subject=${subject}&body=${body}`;
-}
 
 // --- Init ---
 async function init() {
@@ -286,9 +278,7 @@ async function init() {
     button.addEventListener("click", () => record(Number(button.dataset.rating)));
   });
 
-  // Download / Email
   $("download").addEventListener("click", downloadCsv);
-  $("email-btn").addEventListener("click", emailCsv);
 
   // Keyboard shortcuts
   document.addEventListener("keydown", event => {

@@ -221,8 +221,6 @@ kbd {
   border-radius: 6px !important;
 }
 
-/* Done page */
-.done-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
 
 @media (max-width: 600px) {
   main { margin: 0; padding: 10px; }
