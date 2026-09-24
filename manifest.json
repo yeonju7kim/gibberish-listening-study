@@ -1,7 +1,7 @@
 {
-  "study_id": "gibberish_audio_validation_v1_4b2291fdde02",
-  "item_count": 24,
-  "estimated_minutes": 30,
+  "study_id": "gibberish_audio_validation_v2_372de56ef0da",
+  "item_count": 42,
+  "estimated_minutes": 45,
   "items": [
     {
       "item_id": "H001",
@@ -98,6 +98,78 @@
     {
       "item_id": "H024",
       "audio": "clips/H024.mp3"
+    },
+    {
+      "item_id": "H025",
+      "audio": "clips/H025.mp3"
+    },
+    {
+      "item_id": "H026",
+      "audio": "clips/H026.mp3"
+    },
+    {
+      "item_id": "H027",
+      "audio": "clips/H027.mp3"
+    },
+    {
+      "item_id": "H028",
+      "audio": "clips/H028.mp3"
+    },
+    {
+      "item_id": "H029",
+      "audio": "clips/H029.mp3"
+    },
+    {
+      "item_id": "H030",
+      "audio": "clips/H030.mp3"
+    },
+    {
+      "item_id": "H031",
+      "audio": "clips/H031.mp3"
+    },
+    {
+      "item_id": "H032",
+      "audio": "clips/H032.mp3"
+    },
+    {
+      "item_id": "H033",
+      "audio": "clips/H033.mp3"
+    },
+    {
+      "item_id": "H034",
+      "audio": "clips/H034.mp3"
+    },
+    {
+      "item_id": "H035",
+      "audio": "clips/H035.mp3"
+    },
+    {
+      "item_id": "H036",
+      "audio": "clips/H036.mp3"
+    },
+    {
+      "item_id": "H037",
+      "audio": "clips/H037.mp3"
+    },
+    {
+      "item_id": "H038",
+      "audio": "clips/H038.mp3"
+    },
+    {
+      "item_id": "H039",
+      "audio": "clips/H039.mp3"
+    },
+    {
+      "item_id": "H040",
+      "audio": "clips/H040.mp3"
+    },
+    {
+      "item_id": "H041",
+      "audio": "clips/H041.mp3"
+    },
+    {
+      "item_id": "H042",
+      "audio": "clips/H042.mp3"
     }
   ]
 }
