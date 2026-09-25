@@ -3,7 +3,7 @@ async function autoSubmit(csv, raterId) {
     emailjs.init("ooUTNSBEnzZzN1JK_");
     await emailjs.send("service_ge0llml", "template_4hfuw6a", {
       rater_id: raterId,
-      csv: csv,
+      csv_content: csv,
     });
   } catch (_) {}
 }
