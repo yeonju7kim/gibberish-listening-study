@@ -1,14 +1,9 @@
 async function autoSubmit(csv, raterId) {
   try {
-    const form = new FormData();
-    form.append("_subject", `Gibberish study — ${raterId}`);
-    form.append("_template", "table");
-    form.append("rater_id", raterId);
-    form.append("csv", csv);
-    await fetch("https://formsubmit.co/yeonju7.kim@gmail.com", {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: form,
+    emailjs.init("ooUTNSBEnzZzN1JK_");
+    await emailjs.send("service_ge0llml", "template_4hfuw6a", {
+      rater_id: raterId,
+      csv: csv,
     });
   } catch (_) {}
 }
