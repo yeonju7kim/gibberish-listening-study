@@ -93,7 +93,11 @@
     <section id="done" class="card page hidden">
       <h1>All done — thank you!</h1>
       <p>Your responses have been recorded. You can now return to Prolific and mark the study as complete.</p>
-      <button id="download" class="secondary">&#8659; Download CSV (optional)</button>
+      <div class="done-actions">
+        <button id="send-btn">&#9993; Send results by email</button>
+        <button id="download" class="secondary">&#8659; Download CSV</button>
+      </div>
+      <p id="send-status" class="hint"></p>
     </section>
 
   </main>

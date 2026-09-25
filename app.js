@@ -300,6 +300,17 @@ async function init() {
   });
 
   $("download").addEventListener("click", downloadCsv);
+  $("send-btn").addEventListener("click", async () => {
+    $("send-btn").disabled = true;
+    $("send-status").textContent = "Sending...";
+    try {
+      await autoSubmit(buildCsv(), state.rater);
+      $("send-status").textContent = "✓ Sent!";
+    } catch (_) {
+      $("send-status").textContent = "Failed. Please download CSV instead.";
+      $("send-btn").disabled = false;
+    }
+  });
 
   // Keyboard shortcuts
   document.addEventListener("keydown", event => {
